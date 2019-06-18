@@ -1,6 +1,19 @@
-Very simple setup running cloud gateway and forwarding request while stripping a prefix. This is about the most simple usecase and test I could come up with and works quite well.
+Very simple setup running cloud gateway.
+
+This currently does two things
+ - forwarding via path
+ - forwarding via host
 
 To try:
-- Run both spring boot apps
-- curl http://localhost/parrot/abc
+- Append hosts to your hosts file
+- Run all 3 spring boot apps
+- curl localhost/seagull
+- curl localhost/parrot/hello
+- curl parrot.com
+- curl seagull
 
+Forwarding examples:
+localhost/seagull -> localhost:8282
+localhost/parrot/abc -> localhost:8181/abc
+seagull.com -> localhost:8282
+parrot.com/abc -> localhost:8181/abc
