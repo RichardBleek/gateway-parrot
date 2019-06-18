@@ -1,4 +1,4 @@
-Very simple setup running cloud gateway.
+Very simple setup running cloud gateway without a discovery service.
 
 This currently does two things
  - forwarding via path
@@ -13,10 +13,7 @@ To try:
 - curl seagull
 
 Forwarding examples:
-localhost/seagull -> localhost:8282
-
-localhost/parrot/abc -> localhost:8181/abc
-
-seagull.com -> localhost:8282
-
-parrot.com/abc -> localhost:8181/abc
+- localhost/seagull -> localhost:8282
+- localhost/parrot/abc -> localhost:8181/abc
+- seagull.com -> localhost:8282
+- parrot.com/abc -> localhost:8181/abc
