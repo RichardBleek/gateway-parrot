@@ -16,10 +16,20 @@ public class GatewayApplication {
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route(p -> p
+				.route(r -> r
 						.path("/parrot/**")
 						.filters(f -> f.stripPrefix(1))
 						.uri("http://localhost:8181"))
+				.route(r -> r
+						.path("/seagull/**")
+						.filters(f -> f.stripPrefix(1))
+						.uri("http://localhost:8282"))
+				.route(r -> r
+						.host("**.parrot.com")
+						.uri("http://localhost:8181"))
+				.route(r -> r
+						.host("**.seagull.com")
+						.uri("http://localhost:8282"))
 				.build();
 	}
 }
